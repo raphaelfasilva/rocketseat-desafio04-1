@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
-    --primary-color: #7159c1
+    --primary-color: #7159cf;
+    --font-color: #6123ff;
 }
 
 * {
@@ -33,4 +34,20 @@ header {
 .menu a {
     text-decoration: none;
     position: relative;
+    color: var(--font-color);
+}
+
+.menu a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+}
+
+.menu a:hover::after {
+    width: 100%;
+    transition: width 200ms cubic-bezier(1, 0.02, 0.57, 0.83);
 }
